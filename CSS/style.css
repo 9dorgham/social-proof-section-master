@@ -4,6 +4,7 @@
 }
 body {
     font-family: 'Spartan', sans-serif;
+    font-size: 15px;
 }
 body::before {
     content: '';
@@ -32,7 +33,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, auto);
-    row-gap: 10px;
+    row-gap: 80px;
     height: 30vw;
 }
 header {
@@ -53,7 +54,7 @@ aside {
 aside div {
     color: hsl(300, 43%, 22%);
     background-color: hsl(300, 24%, 96%);
-    padding: 10px;
+    padding: 20px 50px;
     height: 50px;
     border-radius: 5px;
     margin-top: 10px;
@@ -74,6 +75,9 @@ aside .one {
 }
 aside .two {
     transform: translateX(-40px);
+}
+aside p {
+    font-weight: bold;
 }
 footer {
     grid-area: 2 / 1 / 3 / 4;
