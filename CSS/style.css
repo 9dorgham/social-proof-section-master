@@ -7,19 +7,10 @@ body {
     font-size: 15px;
 }
 body::before {
-    content: '';
-    background-image: url("../images/bg-pattern-top-desktop.svg");
-    width: 584px;
-    height: 362px;
-    position: absolute;
-    top: 0%;
-    left: 0%;
+    content: url("../images/bg-pattern-top-desktop.svg");
 }
 body::after {
-    content: '';
-    background-image: url("../images/bg-pattern-bottom-desktop.svg");
-    width: 850px;
-    height: 573px;
+    content: url("../images/bg-pattern-bottom-desktop.svg");
     position: absolute;
     bottom: 0%;
     right: 0%;
@@ -33,19 +24,17 @@ main {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, auto);
-    row-gap: 80px;
-    height: 30vw;
+    row-gap: 5em;
 }
 header {
     grid-area: 1 / 1 / 2 / 2;
-    margin-top: 10px;
 }
 header h1 {
     color: hsl(300, 43%, 22%);
-    font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: .8em;
+    font-size: 4vw;
 }
-header p {
+main > header p {
     color: hsl(303, 10%, 53%);
 }
 aside {
@@ -53,11 +42,13 @@ aside {
 }
 aside div {
     color: hsl(300, 43%, 22%);
+    font-weight: bold;
+    font-size: .8em;
     background-color: hsl(300, 24%, 96%);
-    padding: 20px 50px;
-    height: 50px;
-    border-radius: 5px;
-    margin-top: 10px;
+    padding: 1.1em 4em;
+    height: 4em;
+    border-radius: .25em;
+    margin-top: .8em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,109 +59,91 @@ aside div::before {
     width: 85px;
     background-image: url(../images/icon-star.svg);
     background-repeat: repeat-x;
-    margin-right: 10px;
+    margin-right: .8em;
 }
 aside .one {
-    transform: translateX(-80px);
+    transform: translateX(-5em);
 }
 aside .two {
-    transform: translateX(-40px);
-}
-aside p {
-    font-weight: bold;
+    transform: translateX(-2.5em);
 }
 footer {
     grid-area: 2 / 1 / 3 / 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-    perspective: 500px;
+    column-gap: .8em;
+    perspective: 40em;
 }
-footer .customer-card {
+footer > div {
     background-color: hsl(300, 43%, 22%);
-    padding: 30px;
-    border-radius: 5px;
+    padding: 2em;
+    border-radius: .25em;
+    color: #fff;
 }
-footer .customer-card img {
-    width: 40px;
-    height: 40px;
+footer > div img {
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
+}
+footer > div > p {
+    font-size: .9em;
 }
 footer .one {
     grid-area: 1 / 1 / 2 / 2;
 }
 footer .two {
     grid-area: 1 / 2 / 2 / 3;
-    transform: translate3d(20px, 20px, 20px);
+    transform: translate3d(1.25em, 1.25em, 1.25em);
 }
 footer .three {
     grid-area: 1 / 3 / 2 / 4;
-    transform: translate3d(30px, 30px, 30px);
+    transform: translate3d(2em, 2em, 2em);
 }
 footer header {
     display: flex;
-    margin-bottom: 20px;
-}
-footer p {
-    font-size: 14px;
+    margin-bottom: 1.25em;
 }
 footer header .test {
-    margin-left: 20px;
+    margin-left: 1.25em;
 }
-footer .test h4 {
+footer .test p:first-of-type {
     color: hsl(333, 80%, 67%);
-    opacity: .7;
+    font-weight: bold;
 }
-footer  p:last-child {
-    color: #fff;
-}
-@media (max-width: 375px) {
+@media (max-width: 768px) {
     body::before {
-        background-image: url("../images/bg-pattern-top-mobile.svg");
-        width: 374px;
-        height: 232px;
+        content: url("../images/bg-pattern-top-mobile.svg");
     }
     body::after {
-        background-image: url("../images/bg-pattern-bottom-desktop.svg");
-        width: 375px;
-        height: 503px;
+        content: url("../images/bg-pattern-bottom-mobile.svg");
     }
     main {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3, auto);
-        row-gap: 10px;
-        top: 10%;
-    }
-    header {
-        margin-top: 40px;
-    }
-    header h1 {
-        font-size: unset;
+        row-gap: .8em;
+        margin: 20em auto;
     }
     aside {
         grid-area: 2 / 1 / 3 / 2;
-        font-size: 12px;
     }
     aside div {
-        align-content: flex-end;
+        border-top: 20px solid hsl(300, 24%, 96%);
     }
-    aside .one {
-        transform: translateX(0px);
-    }
+    aside .one,
     aside .two {
-        transform: translateX(0px);
+        transform: translate(0);
     }
     aside div::before {
         position: absolute;
-        top: 0%;
+        top: -1.25em;
         left: 50%;
         transform: translateX(-50%);
     }
     footer {
-        grid-area: 3 / 1 / 4 / 4;
+        grid-area: 3 / 1 / 4 / 2;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(3, 1fr);
-        row-gap: 10px;
+        row-gap: .8em;
     }
     footer .one {
         grid-area: 1 / 1 / 2 / 2
@@ -180,7 +153,7 @@ footer  p:last-child {
         transform: translate3d(0px, 0px, 0px);
     }
     footer .three {
-        grid-area: 3 / 1 / 4 / 1;
+        grid-area: 3 / 1 / 4 / 2;
         transform: translate3d(0px, 0px, 0px);
     }
 }
